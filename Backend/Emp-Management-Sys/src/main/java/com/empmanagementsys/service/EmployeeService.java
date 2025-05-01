@@ -1,0 +1,54 @@
+package com.empmanagementsys.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.empmanagementsys.exception.ResourceNotFoundException;
+import com.empmanagementsys.model.Employee;
+import com.empmanagementsys.repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+
+	@Autowired
+	private EmployeeRepository empRepo;
+	
+//	Get All Employees
+	public List<Employee> getAllEmployees(){
+		return empRepo.findAll();
+	}
+	
+//	Get Employee by ID
+	public Employee getEmployeeById(int id) {
+		return empRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Employee not found with id: "+id));
+	}
+	
+//	Add Employee
+	public Employee addEmployee(Employee Emp){
+		return empRepo.save(Emp);
+	}
+	
+//	Update Employee
+	public Employee updateEmployee(int id,Employee emp) {
+		Employee employee = empRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Employee not found with id: "+id));
+		employee.setFirstName(emp.getFirstName());
+		employee.setLastName(emp.getLastName());
+		employee.setEmail(emp.getEmail());
+		
+		return empRepo.save(employee);
+	}
+	
+//	Delete Employee
+	public Map<String, Boolean> deleteEmployee(int id) {
+		Employee employee = empRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Employee not found with id: "+id));
+		
+		empRepo.delete(employee);
+		Map<String,Boolean> response=new HashMap<>();
+		response.put("deleted",true);
+		return response;
+	}
+}

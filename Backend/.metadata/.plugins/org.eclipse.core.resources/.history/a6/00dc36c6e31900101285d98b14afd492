@@ -1,0 +1,5 @@
+package com.empmanagementsys.service;
+
+public class EmployeeService {
+
+}
