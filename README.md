@@ -23,7 +23,7 @@ It supports Create, Read, Update, and Delete (CRUD) operations and is fully test
 ![Postman - Get All](./ScreenShots/postman-getall.png)
 
 ### 🔹 Get One Employee
-![Postman - Get One](./ScreenShots/postman-getone.png)
+![Postman - Get One](./ScreenShots/postman-get.png)
 
 ### 🔹 Add Employee
 ![Postman - Add](./ScreenShots/postman-post.png)
