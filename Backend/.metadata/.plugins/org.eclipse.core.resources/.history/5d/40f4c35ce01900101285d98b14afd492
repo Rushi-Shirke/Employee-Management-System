@@ -1,5 +1,0 @@
-package com.empmanagementsys.repository;
-
-public interface EmployeeRepository {
-
-}

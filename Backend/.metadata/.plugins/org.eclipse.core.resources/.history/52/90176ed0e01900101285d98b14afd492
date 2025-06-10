@@ -1,5 +1,0 @@
-package com.empmanagementsys.exception;
-
-public class RecourceNotFoundException {
-
-}
