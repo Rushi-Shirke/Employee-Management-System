@@ -58,7 +58,7 @@ It supports Create, Read, Update, and Delete (CRUD) operations and is fully test
 ### 🔧 Backend (Spring Boot)
 1. Clone the repository
 2. Import the backend project in your IDE
-3. Update `application.properties` with your MySQL credentials
+3. Update `application.properties` with your MySQL credentials(username,password)
 4. Run the application
 
 ### 🌐 Frontend (Angular)
